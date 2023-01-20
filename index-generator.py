@@ -2,6 +2,7 @@ from elasticsearch import Elasticsearch, helpers
 from elasticsearch_dsl import Index
 import json
 import datetime
+import os
 
 elasticsearchClient = Elasticsearch(HOST="http://localhost", PORT=9200)
 INDEX = 'sinhala-song'
@@ -204,4 +205,4 @@ def getFormattedSongList():
 
 
 createIndex()
-helpers.bulk(elasticsearchClient,getFormattedSongList(()))
+helpers.bulk(elasticsearchClient,getFormattedSongList())
